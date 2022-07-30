@@ -1,0 +1,1493 @@
+@import "../layouts/header";
+
+
+
+//---carousel--------
+.carousel {
+    position: relative;
+    overflow: hidden;
+
+    .container {
+        position: relative;
+        z-index: 3;
+
+        .row {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+
+            .col-left {
+                width: 40%;
+
+                @include reponsive(lg) {
+                    width: 100%;
+                    padding-top: 100px;
+                    text-align: center;
+                }
+
+                h3 {
+                    @include text($fs-xl-2, $fw-semiBold, $color-primary-0);
+                }
+
+                h1 {
+                    @include text($fs-xl-9, $fw-bold, $color-dark-0);
+
+                    @include reponsive(sm) {
+                        font-size: $fs-xl-5;
+                    }
+                }
+
+                h2 {
+                    @include text($fs-xl-9, $fw-medium, $color-dark-0);
+
+                    @include reponsive(sm) {
+                        font-size: $fs-xl-5;
+                    }
+                }
+
+                button {
+                    @extend .btn-carousel;
+                    margin-top: 20px;
+                }
+            }
+
+            .animate__animated.animate__fadeIn {
+                --animate-duration: 2s;
+            }
+
+            .col-right {
+                width: 60%;
+                position: relative;
+                top: -30px;
+
+                @include reponsive(lg) {
+                    width: 100%;
+                    top: 0;
+                }
+
+                .img {
+                    img {
+                        width: 100%;
+                        display: block;
+                    }
+                }
+
+                .img1 {
+                    .img-bonjour {
+                        @include imgCarousel();
+                        transition: all 3s;
+                        bottom: 40px;
+                        right: 0;
+                        animation: ani1 1s;
+
+                        @keyframes ani1 {
+                            from {
+                                transform: translateY(-50px);
+                            }
+
+                            to {}
+                        }
+                    }
+
+                    .img-guten {
+                        @include imgCarousel();
+                        transition: all 5s;
+                        left: 0;
+                        bottom: 50px;
+                        animation: ani2 2s;
+
+                        @keyframes ani2 {
+                            from {
+                                transform: translateY(-70px);
+                            }
+
+                            to {}
+                        }
+                    }
+
+                    .img-hello {
+                        @include imgCarousel();
+                        right: 15%;
+                        top: 15%;
+                        animation: ani3 1s;
+
+                        @keyframes ani3 {
+                            from {
+                                transform: translateY(30px);
+                            }
+
+                            to {}
+                        }
+                    }
+
+                    .img-ciao {
+                        @include imgCarousel();
+                        right: 0;
+                        top: 40%;
+                        animation: ani4 1s;
+
+                        @keyframes ani4 {
+                            from {
+                                transform: translateY(20px);
+                            }
+
+                            to {}
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .bg-top {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+
+        img {
+            width: 108%;
+            display: block;
+        }
+
+        @include reponsive(lg) {
+            img {
+                width: auto;
+            }
+        }
+    }
+
+    .bg-bottom {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        img {
+            width: 100%;
+            display: block;
+        }
+    }
+}
+
+//---methodology----
+.methodology {
+    background-color: #dcd1f3;
+    padding-bottom: 50px;
+    overflow: hidden;
+
+    .container {
+        overflow: hidden;
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -20px;
+
+            @for $i from 1 to 4 {
+                .col#{$i} {
+                    animation: faceUp 1s*($i);
+                }
+
+            }
+
+            @keyframes faceUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(50px);
+                }
+
+                to {}
+
+            }
+
+            .col {
+                display: flex;
+                padding: 0 20px;
+                width: calc(100%/3);
+
+                .col-left {
+                    a {
+                        @include text($fs-xl-6, $fw-regular, $color-dark-0);
+                        display: inline-block;
+                        line-height: 0;
+
+                        i {
+                            line-height: 0.9;
+                        }
+                    }
+                }
+
+                .col-right {
+                    padding-left: 15px;
+
+                    a {
+                        @include text($fs-xs-14, $fw-semiBold, $color-primary-0);
+                        letter-spacing: 1px;
+
+                        i {
+                            font-size: $fs-base;
+                        }
+                    }
+
+                    p {
+                        @include text($fs-xs-14, $fw-semiBold, $color-dark-1);
+                        line-height: 2;
+                        letter-spacing: -0.2px;
+                        margin: 10px 0;
+
+                        @include reponsive(lg) {
+                            line-height: 1.5;
+                            margin: 5px 0;
+                        }
+                    }
+                }
+
+                &:hover {
+                    .col-left {
+                        a {
+                            color: $color-primary-0;
+                        }
+                    }
+
+                    .col-right {
+                        a {
+                            color: $color-dark-0;
+                        }
+                    }
+                }
+
+                @include reponsive(lg) {
+                    width: 100%;
+                    margin: 10px 0;
+                }
+            }
+        }
+    }
+}
+
+//---about---
+.about {
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+
+    .container {
+        position: relative;
+        z-index: 3;
+
+        .row {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+
+            .col-left {
+                width: 50%;
+                position: relative;
+
+                @include reponsive(lg) {
+                    width: 100%;
+                }
+
+                .swiper1 {
+                    .swiper-wrapper {
+                        .swiper-slide {
+                            padding-right: 100px;
+
+                            @include reponsive(sm) {
+                                padding-right: 0;
+                            }
+
+                            .text {
+                                p {
+                                    @include text($fs-xl-25, $fw-regular, $color-dark-2);
+                                    line-height: 2;
+                                    font-style: italic;
+                                    margin: 50px 0;
+
+                                    @include reponsive(sm) {
+                                        font-size: $fs-xl-2;
+                                    }
+
+                                    @include reponsive(lg) {
+                                        margin: 20px 0;
+                                    }
+                                }
+
+                                h5 {
+                                    @include text($fs-xs-13, $fw-semiBold, $color-primary-0);
+                                }
+
+                                h6 {
+                                    @include text($fs-xs-15, $fw-regular, $color-dark-2);
+                                    line-height: 1.5;
+                                    margin-bottom: 50px;
+
+                                    @include reponsive(lg) {
+                                        margin-bottom: 40px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .swiper-pagination {
+                        text-align: left;
+
+                        .swiper-pagination-bullet {
+                            background: $color-yellow-0;
+                            opacity: 1;
+                            transform: scale(1.3);
+                            margin-right: 15px;
+                            transition: all 0.3s;
+
+                            &:hover {
+                                background: $color-primary-0;
+                                transform: scale(1.7);
+                            }
+                        }
+
+                        .swiper-pagination-bullet-active {
+                            background: $color-primary-0;
+                            transform: scale(1.7);
+                        }
+                    }
+                }
+
+                .bg-left {
+                    position: absolute;
+                    top: 0;
+                    transition: all 3s;
+
+                    @include reponsive(lg) {
+                        display: none;
+                    }
+
+                    img {
+                        width: 680px;
+                        position: relative;
+                        top: -80px;
+                        left: -110px;
+
+                    }
+                }
+            }
+
+            .col-right {
+                width: 50%;
+                position: relative;
+
+                @include reponsive(lg) {
+                    width: 100%;
+                    margin-top: 50px;
+                }
+
+                h3 {
+                    @include text($fs-base, $fw-semiBold, $color-primary-0);
+                    margin-bottom: 10px;
+                }
+
+                h4 {
+                    @include text($fs-xl-6, $fw-bold, $color-dark-0);
+
+                    @include reponsive(sm) {
+                        font-size: $fs-xl-4;
+                    }
+                }
+
+                p {
+                    @include text($fs-base, $fw-regular, $color-dark-2);
+                    line-height: 2;
+                    margin: 20px 0 40px;
+                }
+
+                button {
+                    @extend .btn-carousel;
+                }
+            }
+        }
+    }
+
+    .bg-top {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+
+        img {
+            width: 110%;
+
+            @include reponsive(lg) {
+                width: auto;
+            }
+        }
+    }
+
+}
+
+//courses
+.courses {
+    overflow: hidden;
+    padding-bottom: 50px;
+
+    .container {
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -25px;
+
+            @for $i from 1 to 4 {
+                .col#{$i} {
+                    animation: faceUp 1s*($i);
+                }
+
+            }
+
+            @keyframes faceUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(50px);
+                }
+
+                to {}
+
+            }
+
+            .col {
+                width: calc(100%/3);
+                padding: 0 25px;
+
+                @include reponsive(lg) {
+                    width: 100%;
+                    margin-top: 30px;
+                }
+
+                .card {
+                    border-radius: 10px;
+                    overflow: hidden;
+                    transition: all 1s;
+
+                    &:hover {
+                        box-shadow: 0 25px 20px -20px rgb(0 0 0 / 20%);
+
+                        .img {
+                            img {
+                                transform: scale(1.1);
+                            }
+                        }
+                    }
+
+                    .img {
+                        overflow: hidden;
+
+                        img {
+                            width: 100%;
+                            display: block;
+                            transition: all 1s;
+                        }
+                    }
+
+                    .text {
+                        padding: 20px 40px 50px;
+
+                        h6 {
+                            @include text($fs-xs-13, $fw-semiBold, $color-dark-0);
+                            margin-bottom: 10px
+                        }
+
+                        h3 {
+                            @include text($fs-xl-25, $fw-bold, $color-dark-0);
+                            position: relative;
+
+                            &::before {
+                                content: "\2765";
+                                font-size: $fs-xl-8;
+                                position: absolute;
+                                left: -60px;
+                                top: -30px;
+                                color: $color-primary-0;
+                                transform: rotate(30deg)
+                            }
+                        }
+
+                        p {
+                            @include text($fs-xs-14, $fw-semiBold, $color-dark-1);
+                            line-height: 2;
+                            letter-spacing: -0.2px;
+                            margin: 10px 0;
+                        }
+
+                        a {
+                            @include text($fs-xs-14, $fw-semiBold, $color-primary-0);
+                            letter-spacing: 1px;
+
+                            i {
+                                font-size: $fs-base;
+                            }
+
+                            &:hover {
+                                color: $color-dark-0;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+//beginners_courses
+.beginners_courses {
+    position: relative;
+    background-color: #dcd1f3;
+    overflow: hidden;
+
+    .container {
+        position: relative;
+        z-index: 3;
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+
+            .col-left {
+                width: 50%;
+                padding-right: 50px;
+
+                @include reponsive(lg) {
+                    width: 100%;
+                }
+
+                h3 {
+                    @include text($fs-base, $fw-semiBold, $color-primary-0);
+                    margin-bottom: 10px;
+                }
+
+                h4 {
+                    @include text($fs-xl-5, $fw-bold, $color-dark-0);
+
+                    @include reponsive(sm) {
+                        font-size: $fs-xl-4;
+                    }
+                }
+
+                p {
+                    @include text($fs-xs-14, $fw-semiBold, $color-dark-1);
+                    line-height: 2;
+                    letter-spacing: -0.2px;
+                    margin: 10px 0 30px;
+                }
+
+                button {
+                    @extend .btn-beginner1;
+                    margin-right: 10px;
+                }
+
+                a {
+                    @extend .btn-beginner2;
+
+                    @include reponsive(lg) {
+                        margin: 10px 0;
+                    }
+
+                    i {
+                        transform: rotate(-90deg);
+                        font-size: $fs-base;
+                    }
+                }
+            }
+
+            .col-right {
+                padding: 30px 0;
+                width: 50%;
+                transition: all 3s;
+
+                @include reponsive(lg) {
+                    width: 100%;
+                }
+
+                img {
+                    width: 100%;
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .bg-top {
+        overflow: hidden;
+        position: absolute;
+        top: 0px;
+
+        img {
+            width: 112%;
+        }
+    }
+}
+
+// leverb2
+.levelb2 {
+    padding-top: 80px;
+    padding-bottom: 30px;
+    position: relative;
+    background-color: #dcd1f3;
+    overflow: hidden;
+
+    .container {
+        position: relative;
+        z-index: 3;
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+
+            .col-left {
+                width: 50%;
+                padding-right: 30px;
+
+                @include reponsive(lg) {
+                    width: 100%;
+                    padding: 0;
+                }
+
+                img {
+                    transition: all 3s;
+                    width: 100%;
+                }
+            }
+
+            .col-right {
+                width: 50%;
+                padding: 30px 0 30px 30px;
+
+                @include reponsive(lg) {
+                    width: 100%;
+                    padding-left: 0;
+                    padding-top: 0;
+                }
+
+                h3 {
+                    @include text($fs-base, $fw-semiBold, $color-primary-0);
+                    margin-bottom: 10px;
+                }
+
+                h4 {
+                    @include text($fs-xl-5, $fw-bold, $color-dark-0);
+
+                    @include reponsive(sm) {
+                        font-size: $fs-xl-4;
+                    }
+                }
+
+                p {
+                    @include text($fs-xs-14, $fw-semiBold, $color-dark-1);
+                    line-height: 2;
+                    letter-spacing: -0.2px;
+                    margin: 10px 0 30px;
+                }
+
+                .list {
+                    .item {
+                        display: flex;
+                        padding: 10px 0;
+                        border-bottom: 1px solid $color-dark-3;
+
+                        &:hover {
+                            .item-left {
+                                i {
+                                    color: $color-primary-0;
+                                }
+                            }
+                        }
+
+                        .item-left {
+                            padding-right: 20px;
+
+                            i {
+                                font-size: $fs-xl-4;
+                                transition: all 0.3s;
+                            }
+                        }
+
+                        .item-right {
+                            flex: 1;
+
+                            .top {
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                cursor: pointer;
+                                padding: 10px 0;
+
+                                h3 {
+                                    font-size: $fs-xs-13;
+                                    margin: 0;
+                                }
+
+                                i {
+                                    width: 20px;
+                                    height: 20px;
+                                    line-height: 20px;
+                                    text-align: center;
+                                    border-radius: 100%;
+                                    border: 1px solid $color-dark-2;
+                                    color: $color-dark-2;
+                                    font-weight: $fw-bold;
+                                }
+
+                                .la-minus {
+                                    display: none;
+                                }
+
+                            }
+
+                            .bottom {
+                                display: none;
+                                padding-right: 25px
+                            }
+                        }
+                    }
+                }
+
+                button {
+                    @extend .btn-carousel;
+                    margin-top: 30px;
+                }
+            }
+        }
+    }
+
+    .bg-bottom {
+        position: absolute;
+        bottom: 0;
+
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+}
+
+// weekly
+.weekly {
+    .container {
+        overflow: hidden;
+
+        .title {
+            h1 {
+                @include text($fs-xl-6, $fw-bold, $color-dark-0);
+                text-align: center;
+                padding: 50px 0;
+
+                @include reponsive(sm) {
+                    font-size: $fs-xl-4;
+                    padding: 30px 0;
+                }
+            }
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -30px;
+
+            @for $i from 1 to 4 {
+                .col#{$i} {
+                    animation: faceUp 1s*($i);
+                }
+
+            }
+
+            @keyframes faceUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(50px);
+                }
+
+                to {}
+
+            }
+
+            .col {
+                width: calc(100%/3);
+                padding: 0 30px;
+
+                @include reponsive(lg) {
+                    width: 100%;
+                    margin-top: 50px;
+                }
+
+                .card {
+
+                    border-radius: 10px;
+                    overflow: hidden;
+                    box-shadow: 0 15px 25px -15px rgb(0 0 0 / 20%);
+
+                    .card-header1 {
+                        background-image: url(../img/weekly1.jpg);
+                    }
+
+                    .card-header2 {
+                        background-image: url(../img/weekly2.jpg);
+                    }
+
+                    .card-header3 {
+                        background-image: url(../img/weekly3.jpg);
+                    }
+
+                    .card-header {
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        padding: 70px 20px;
+
+                        h3 {
+                            @include text($fs-xs-13, $fw-regular, $color-light-0);
+                            margin-bottom: 5px;
+                        }
+
+                        h4 {
+                            @include text($fs-xl-25, $fw-bold, $color-light-0)
+                        }
+                    }
+
+                    .card-body {
+                        background-color: #efefef;
+
+                        .item {
+                            display: flex;
+                            justify-content: space-between;
+                            border-bottom: 1px solid $color-dark-4;
+
+                            &:last-child {
+                                border-bottom: transparent;
+                            }
+
+                            ;
+
+                            span {
+                                padding: 20px 25px;
+                                @include text($fs-xs-13, $fw-semiBold, $color-dark-0);
+
+                                &:first-child {
+                                    padding-right: 0;
+                                }
+
+                                &:last-child {
+                                    padding-left: 0;
+                                }
+                            }
+                        }
+
+                        .item1 {
+                            border-bottom: 1px solid $color-dark-4;
+                            background-color: $color-light-0;
+
+                            .item-top {
+                                display: flex;
+                                justify-content: space-between;
+                                padding: 20px 25px 0;
+
+                                p {
+                                    @include text($fs-xs-13, $fw-semiBold, $color-primary-0);
+                                }
+                            }
+
+                            .item-bottom {
+                                display: flex;
+                                justify-content: space-between;
+                                padding: 10px 25px 20px;
+
+                                p {
+                                    @include text($fs-xs-12, $fw-medium, $color-dark-0);
+
+                                    i {
+                                        color: $color-primary-0;
+                                        font-size: $fs-base;
+                                    }
+
+                                    &:last-child {
+                                        text-align: right;
+                                    }
+                                }
+                            }
+                        }
+
+
+
+                    }
+                }
+            }
+        }
+
+        .button {
+            text-align: center;
+            padding: 50px 0;
+
+            button {
+                @extend .btn-carousel;
+            }
+
+        }
+    }
+}
+
+//specialoffer
+.specialoffer {
+    padding: 70px 0 50px;
+    overflow: hidden;
+
+    .container {
+        background-color: $color-primary-0;
+        border-radius: 20px;
+        position: relative;
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            position: relative;
+
+            .col-left {
+                width: 50%;
+                position: relative;
+                z-index: 3;
+                padding: 0 50px;
+
+                @include reponsive(lg) {
+                    width: 100%;
+                    padding: 50px 0;
+                }
+
+                h3 {
+                    @include text($fs-xs-13, $fw-semiBold, $color-light-0)
+                }
+
+                h4 {
+                    @include text($fs-xl-3, $fw-bold, $color-light-0);
+                    margin: 10px 0;
+                }
+
+                h5 {
+                    @include text($fs-xl-7, $fw-bold, $color-light-0)
+                }
+
+                button {
+                    @extend .btn-special;
+                    margin-top: 50px;
+                }
+
+
+            }
+
+            .col-right {
+                width: 50%;
+                margin: -40px 0 0 -40px;
+
+                @include reponsive(lg) {
+                    width: 100%;
+                    margin: 0;
+                }
+
+                img {
+                    display: block;
+                    width: 100%;
+                }
+            }
+
+            .bg {
+                position: absolute;
+                top: -40px;
+                left: -130px;
+                z-index: 2;
+
+                @include reponsive(xl) {
+                    top: -80px;
+                    left: -110px
+                }
+
+                img {
+                    width: 100%;
+                    transition: all 2s;
+
+                    @include reponsive(lg) {
+                        display: none;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+// event
+.event {
+    padding: 100px 0 50px;
+    overflow: hidden;
+
+    .container {
+        .title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+            position: relative;
+
+            @include reponsive(lg) {
+                margin-bottom: 0;
+            }
+
+            &::after {
+                content: '\2765';
+                color: #eee;
+                position: absolute;
+                font-size: 300px;
+                top: -180px;
+                left: -100px;
+                transform: rotate(-30deg)
+            }
+
+            span {
+                @include text($fs-xl-6, $fw-bold, $color-dark-0);
+                position: relative;
+                z-index: 5;
+
+                @include reponsive(lg) {
+                    width: 100%;
+                    margin-bottom: 20px;
+                }
+
+                @include reponsive(md) {
+                    font-size: $fs-xl-4;
+                }
+
+                &::before {
+                    content: '\2765';
+                    color: $color-primary-0;
+                    position: absolute;
+                    top: -90px;
+                    left: -60px;
+                    z-index: 2;
+                    transform: rotate(30deg);
+                }
+
+
+            }
+
+            button {
+                position: relative;
+                z-index: 5;
+                @extend .btn-carousel;
+            }
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -25px;
+            position: relative;
+            z-index: 5;
+
+            @for $i from 1 to 4 {
+                .col#{$i} {
+                    animation: faceUp4 1s*($i);
+                }
+
+            }
+
+            @keyframes faceUp4 {
+                from {
+                    opacity: 0;
+                    transform: translateY(50px);
+                }
+
+                to {}
+
+            }
+
+            .col {
+                width: calc(100%/3);
+                padding: 0 25px;
+
+                @include reponsive(lg) {
+                    width: 100%;
+                    margin-top: 50px;
+                }
+
+                .card {
+                    border-radius: 10px;
+                    overflow: hidden;
+
+                    .img {
+                        margin-bottom: 25px;
+
+                        img {
+                            width: 100%;
+                            display: block;
+                        }
+                    }
+
+                    .card-body {
+                        padding: 0 25px;
+
+                        .card-item {
+                            display: flex;
+                            align-items: center;
+
+                            .card-item-left {
+                                padding-right: 15px;
+                                position: relative;
+
+                                &::after {
+                                    content: '';
+                                    position: absolute;
+                                    width: 1px;
+                                    height: 65px;
+                                    top: 0;
+                                    right: 0;
+                                    background-color: $color-dark-0;
+                                }
+
+                                p {
+                                    @include text($fs-xl-25, $fw-bold, $color-primary-0);
+                                    margin: 0;
+                                    line-height: 1;
+                                }
+
+                                span {
+                                    @include text($fs-xl-4, $fw-bold, $color-primary-0);
+                                    line-height: 1;
+                                }
+                            }
+
+                            .card-item-right {
+                                padding: 0 15px;
+
+                                p {
+                                    @include text($fs-xl-28, $fw-bold, $color-dark-0);
+                                    line-height: 1.2;
+                                    margin: 0
+                                }
+                            }
+                        }
+
+                        p {
+                            @include text($fs-xs-14, $fw-semiBold, $color-dark-1);
+                            line-height: 2;
+                            letter-spacing: -0.2px;
+                            margin: 15px 0;
+                        }
+
+                        a {
+                            @include text($fs-xs-15, $fw-semiBold, $color-primary-0);
+                            letter-spacing: 1px;
+                            margin-top: 20px;
+
+                            i {
+                                font-size: $fs-xs-17;
+                                margin-left: 10px;
+                            }
+
+                            &:hover {
+                                color: $color-dark-0;
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            .col3 {
+                .card {
+                    .card-body {
+                        a {
+                            color: $color-dark-0;
+
+                            &:hover {
+                                color: $color-primary-0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//price
+.price {
+    position: relative;
+    background-image: url(../img/price-background_02.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 150px 0;
+    overflow: hidden;
+
+    @include reponsive(lg) {
+        padding-top: 50px;
+    }
+
+    .container {
+        position: relative;
+        z-index: 3;
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -20px 200px;
+
+            @include reponsive(lg) {
+                margin-bottom: 0;
+            }
+
+            .col {
+                padding: 0 20px;
+                width: calc(100%/3);
+                text-align: center;
+
+                @include reponsive(lg) {
+                    width: 100%;
+                    margin-top: 30px;
+                }
+
+                .card {
+                    padding: 50px 30px;
+
+                    h3 {
+                        @include text($fs-base, $fw-semiBold, $color-primary-0);
+                    }
+
+                    h4 {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 10px 0;
+                        @include text($fs-xl-8, $fw-bold, $color-dark-0);
+
+                        b {
+                            font-size: $fs-xl-4;
+                        }
+                    }
+
+                    p {
+                        @include text($fs-xs-14, $fw-semiBold, $color-dark-1);
+                        line-height: 2;
+                        letter-spacing: -0.2px;
+                        padding: 50px 0;
+                        position: relative;
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            top: 25px;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            width: 70px;
+                            height: 1px;
+                            background-color: $color-primary-0;
+                        }
+                    }
+                }
+
+            }
+
+            .col2 {
+
+                .card {
+                    box-shadow: 0 30px 30px -10px rgb(0 0 0 / 20%);
+                    background-color: $color-light-0;
+                    border-radius: 10px;
+                }
+            }
+        }
+
+        .swiper2 {
+            .swiper-wrapper {
+                .swiper-slide {
+                    img {
+                        width: 100%;
+                        display: block;
+                    }
+                }
+            }
+
+            .swiper-button-prev {
+                &::after {
+                    content: '\2794';
+                    color: $color-light-0;
+                    transition: all 0.5s;
+                    font-size: $fs-xl-3;
+                    transform: rotate(180deg);
+                }
+
+                &:hover {
+                    &::after {
+                        color: $color-light-1;
+                    }
+                }
+            }
+
+            .swiper-button-next {
+                &::after {
+                    content: '\2794';
+                    color: $color-light-0;
+                    transition: all 0.5s;
+                    font-size: $fs-xl-3;
+                }
+
+                &:hover {
+                    &::after {
+                        color: $color-light-1;
+                    }
+                }
+            }
+        }
+    }
+
+    .bg-top {
+        position: absolute;
+        top: 0;
+
+        img {
+            width: 100%;
+            display: block;
+        }
+    }
+
+    .bg-bottom {
+        position: absolute;
+        bottom: 0;
+
+        img {
+            width: 100%;
+            display: block;
+        }
+    }
+}
+
+// find
+.find {
+    position: relative;
+    padding: 0px 0 100px;
+    overflow: hidden;
+
+    .container {
+        position: relative;
+        z-index: 3;
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+
+            .col-left {
+                width: 50%;
+
+                @include reponsive(lg) {
+                    width: 100%;
+                }
+
+                img {
+                    width: 100%;
+                    display: block;
+                }
+            }
+
+            .col-right {
+                width: 50%;
+                padding-left: 50px;
+
+                @include reponsive(lg) {
+                    width: 100%;
+                    padding: 0;
+                }
+
+                .card {
+                    box-shadow: 0 30px 30px -10px rgb(0 0 0 / 20%);
+                    background-color: $color-light-0;
+                    max-width: 400px;
+                    margin-left: auto;
+                    border-radius: 10px;
+                    padding: 30px 20px;
+
+                    @include reponsive(lg) {
+                        max-width: 100%;
+                        margin: 30px 0;
+                    }
+
+                    h3 {
+                        @include text($fs-xl-4, $fw-bold, $color-dark-0);
+                        text-align: center;
+                        margin-bottom: 50px;
+
+                        @include reponsive(sm) {
+                            font-size: $fs-xl-25;
+                            margin-bottom: 20px;
+                        }
+                    }
+
+                    .name-email {
+                        display: flex;
+                        flex-wrap: wrap;
+
+                        .name {
+                            width: 50%;
+                            padding-right: 5px;
+                            position: relative;
+                            @extend .input;
+
+                            @include reponsive(sm) {
+                                width: 100%;
+                                padding-right: 0;
+                            }
+                        }
+
+                        .email {
+                            width: 50%;
+                            padding-left: 5px;
+                            @extend .input;
+
+                            @include reponsive(sm) {
+                                width: 100%;
+                                padding-left: 0;
+                                margin-top: 20px
+                            }
+                        }
+                    }
+
+                    .course {
+                        @extend .select;
+                        margin: 20px 0;
+                    }
+
+                    .comment {
+                        @extend .textarea;
+                    }
+
+                    button {
+                        @extend .btn-find;
+                        margin-top: 50px;
+                    }
+                }
+            }
+        }
+    }
+
+    .bg-bottom {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        img {
+            width: 100%;
+            display: block
+        }
+    }
+}
+
+@import "../layouts/footer";

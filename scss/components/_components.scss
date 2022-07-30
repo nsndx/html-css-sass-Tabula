@@ -1,0 +1,184 @@
+@import '../helpers/variable';
+
+// button default
+.btn {
+    @include button($fs-base, $fw-semiBold, $color-light-0, $pd-btn-0, $bd-btn-0, $br-btn-0, $boxShadow-btn-0, $boxShadow-btn-0-hover, $color-primary-0)
+}
+
+.btn-header-hide-show {
+    @extend .btn;
+    font-size: $fs-xl-3;
+    padding: 0 5px;
+    border-radius: 5px;
+}
+
+.btn-header {
+    @extend .btn;
+    font-size: $fs-xs-14;
+    padding: 13px 20px;
+}
+
+.btn-carousel {
+    @extend .btn;
+    font-size: $fs-xs-15;
+    padding: 18px 30px;
+}
+
+.btn-beginner1 {
+    @extend .btn;
+    font-size: $fs-xs-13;
+    letter-spacing: 1px;
+    padding: 13px 30px;
+    background-color: transparent;
+    color: $color-primary-0;
+    box-shadow: $boxShadow-btn-0-hover;
+
+    &:hover {
+        box-shadow: $boxShadow-btn-0;
+        color: $color-light-0;
+    }
+}
+
+.btn-beginner2 {
+    @extend .btn;
+    font-size: $fs-xs-13;
+    letter-spacing: 1px;
+    padding: 13px 30px;
+}
+
+.btn-special {
+    @include button($fs-xs-13, $fw-semiBold, $color-dark-0, $pd-btn-1, $bd-btn-1, $br-btn-0, $boxShadow-btn-1, $boxShadow-btn-1-hover, $color-light-0);
+}
+
+.btn-find {
+    @extend .btn-beginner2;
+    padding: 14px 50px;
+}
+
+.aniImgCarousel {
+    transform: translateY(-60px)
+}
+
+.aniImgCarousel1 {
+    transform: translateY(-50px)
+}
+
+.aniImgCarousel2 {
+    transform: translateY(-100px)
+}
+
+.aniAboutBg {
+    transform: translateY(-20px);
+}
+
+.aniBeginners {
+    transform: translateY(-30px);
+}
+
+.input {
+    position: relative;
+
+    i {
+        position: absolute;
+        top: 11px;
+        left: 15px;
+        color: $color-primary-0;
+    }
+
+    input {
+        border: 1px solid $color-dark-4;
+        padding: 10px 0 10px 40px;
+        border-radius: 30px;
+        width: 100%;
+        font-size: $fs-xs-13;
+        font-weight: $fw-medium;
+        color: $color-dark-2;
+        transition: all 0.5s;
+
+        &:focus {
+            outline: none;
+            border-color: $color-dark-5;
+        }
+
+        &::placeholder {
+            letter-spacing: -0.5px;
+        }
+    }
+}
+
+.select {
+    position: relative;
+
+    i {
+        position: absolute;
+        top: 12px;
+        left: 15px;
+        color: $color-primary-0;
+        z-index: 1;
+    }
+
+    &::after {
+        content: '\30C';
+        position: absolute;
+        font-size: $fs-xl-3;
+        z-index: 2;
+        top: 10px;
+        right: 18px;
+        color: $color-primary-0;
+    }
+
+    select {
+        border: 1px solid $color-dark-4;
+        padding: 10px 0 10px 40px;
+        border-radius: 30px;
+        width: 100%;
+        font-size: $fs-xs-13;
+        font-weight: $fw-medium;
+        color: $color-dark-1;
+        transition: all 0.5s;
+        cursor: pointer;
+        appearance: none;
+
+        option {
+            font-size: $fs-xs-13;
+            font-weight: $fw-medium;
+            color: $color-dark-2;
+        }
+
+        &:focus {
+            outline: none;
+            border-color: $color-dark-5;
+        }
+    }
+}
+
+.textarea {
+    position: relative;
+
+    i {
+        position: absolute;
+        top: 12px;
+        left: 15px;
+        color: $color-primary-0;
+    }
+
+    textarea {
+        border: 1px solid $color-dark-4;
+        padding: 10px 0 10px 40px;
+        border-radius: 20px;
+        width: 100%;
+        font-size: $fs-xs-13;
+        font-weight: $fw-medium;
+        color: $color-dark-2;
+        transition: all 0.5s;
+
+        &:focus {
+            outline: none;
+            border-color: $color-dark-5;
+        }
+
+        &::placeholder {
+            letter-spacing: -0.5px;
+        }
+    }
+}

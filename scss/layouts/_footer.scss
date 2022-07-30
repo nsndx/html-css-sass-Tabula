@@ -1,0 +1,164 @@
+@import '../components/components';
+
+footer {
+    background-image: url(../img/footer_background.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 100px 0 200px;
+
+    .container {
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+
+            @for $i from 1 to 5 {
+                .col#{$i} {
+                    animation: faceUp1 1s*($i);
+                }
+
+            }
+
+            @keyframes faceUp1 {
+                from {
+                    opacity: 0;
+                }
+
+                to {}
+
+            }
+
+            .col {
+                width: 25%;
+                margin-top: 30px;
+
+                @include reponsive(lg) {
+                    width: 50%;
+                }
+
+                @include reponsive(sm) {
+                    width: 100%;
+                }
+
+                h3 {
+                    @include text($fs-xl-2, $fw-bold, $color-light-0);
+                    margin-bottom: 30px;
+                }
+
+                a {
+                    @include link($fs-xs-14, $fw-medium, $color-light-0, $color-light-1);
+                    letter-spacing: -0.5px;
+                    padding: 15px 0;
+                    position: relative;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        width: 70px;
+                        height: 1px;
+                        background-color: $color-dark-4;
+                        bottom: 0;
+                        left: 0;
+                    }
+                }
+            }
+
+            .col1 {
+                p {
+                    @include text($fs-xs-14, $fw-medium, $color-light-0);
+                    margin-bottom: 10px;
+                    display: flex;
+                    align-items: center;
+                    letter-spacing: -0.5px;
+
+                    span {
+                        padding-left: 5px;
+                    }
+
+                    i {
+                        font-size: $fs-xl-2;
+                    }
+
+                    &:nth-of-type(2) {
+                        i {
+                            transform: rotate(-90deg);
+                        }
+                    }
+                }
+
+                .contact {
+                    margin-top: 25px;
+
+                    a {
+                        margin-right: 10px;
+                        font-size: $fs-base;
+
+                        &:hover {
+                            color: $color-dark-0;
+                        }
+
+                        &::after {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            .col2 {
+                div {
+                    &:first-of-type {
+                        a {
+                            padding-top: 0;
+                        }
+                    }
+                }
+            }
+
+            .col3 {
+                div {
+                    &:first-of-type {
+                        a {
+                            padding-top: 0;
+                        }
+                    }
+                }
+            }
+
+            .col4 {
+                padding-left: 50px;
+
+                @include reponsive(lg) {
+                    padding-left: 0;
+                }
+
+                input {
+                    width: 100%;
+                    padding: 14px 0;
+                    border-radius: 26px;
+                    text-align: center;
+                    border: 1px solid $color-light-2;
+                    background-color: transparent;
+                    color: $color-light-0;
+                    transition: all 0.5s;
+                    font-size: $fs-xs-14;
+                    margin: 10px 0;
+
+                    &:focus {
+                        outline: none;
+                        border-color: $color-light-0;
+                    }
+
+                    &::placeholder {
+                        color: $color-light-0;
+                    }
+                }
+
+                button {
+                    @extend .btn-special;
+                    width: 100%;
+                    padding: 15px 0;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,144 @@
+@import '../base/base';
+
+/*----------Variable-----------*/
+//Font size
+$fs-base: 16px;
+$fs-xs-12: 12px;
+$fs-xs-13: 13px;
+$fs-xs-14: 14px;
+$fs-xs-15: 15px;
+$fs-xs-17: 17px;
+$fs-xs-18: 18px;
+$fs-xs-19: 19px;
+$fs-xl-2: 20px;
+$fs-xl-25: 25px;
+$fs-xl-28: 28px;
+$fs-xl-3: 30px;
+$fs-xl-4: 40px;
+$fs-xl-5: 50px;
+$fs-xl-6: 60px;
+$fs-xl-7: 70px;
+$fs-xl-8: 80px;
+$fs-xl-9: 90px;
+//Font weight
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semiBold: 600;
+$fw-bold: 700;
+//Color
+$color-primary-0: #b61984;
+$color-dark-0: #000;
+$color-dark-1: rgba(0, 0, 0, 0.65);
+$color-dark-2: rgba(0, 0, 0, 0.8);
+$color-dark-3: rgba(0, 0, 0, 0.4);
+$color-dark-4: rgba(0, 0, 0, 0.2);
+$color-dark-5: rgba(0, 0, 0, 0.5);
+$color-yellow-0: #ffd043;
+$color-light-0: #fff;
+$color-light-1: #ccc;
+$color-light-2: rgba(255, 255, 255, 0.1);
+// Padding button
+$pd-btn-0: 10px 20px;
+$pd-btn-1: 13px 25px;
+// Border button
+$bd-btn-0: 1px solid #b61984;
+$bd-btn-1: 1px solid #ffffff;
+// Border radius
+$br-btn-0: 100px;
+// Boxshadow
+$boxShadow-btn-0: 0 0 0 50px #b61984 inset;
+$boxShadow-btn-1: 0 0 0 50px #fff inset;
+$boxShadow-btn-1-hover: 0 0 0 0 #fff inset;
+$boxShadow-btn-0-hover: 0 0 0 0 #b61984 inset;
+//Breakpoints
+$breakpoints: (
+    xl:1201px,
+    lg:992px,
+    md:768px,
+    sm:576px,
+);
+
+/*----------Mixin-----------*/
+@mixin text($fs: $fs-base, $fw: $fw-regular, $color: $color-dark-0) {
+    font-size: $fs;
+    font-weight: $fw;
+    color: $color;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+
+@mixin link($fs, $fw, $color, $color-hover) {
+    font-size: $fs;
+    font-weight: $fw;
+    color: $color;
+    text-decoration: none;
+    transition: all 0.5s;
+    display: inline-block;
+
+    &:hover {
+        color: $color-hover;
+    }
+}
+
+@mixin linkAfter() {
+    content: '';
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    border-radius: 100%;
+    background-color: $color-primary-0;
+    bottom: -5px;
+    left: 35%;
+    transition: 0.5s;
+}
+
+@mixin button($fs, $fw, $color, $pd, $bd, $br, $boxShadow, $boxShadow-hover, $color-hover) {
+    font-size: $fs;
+    font-weight: $fw;
+    color: $color;
+    padding: $pd;
+    border: $bd;
+    border-radius: $br;
+    box-shadow: $boxShadow;
+    text-decoration: none;
+    transition: all 0.5s;
+    cursor: pointer;
+    display: inline-block;
+
+    &:hover {
+        box-shadow: $boxShadow-hover;
+        color: $color-hover;
+        background-color: transparent;
+    }
+}
+
+@mixin reponsive($screen) {
+    $value: map-get($map: $breakpoints, $key: $screen);
+
+    @media (max-width:$value) {
+        @content;
+    }
+}
+
+@mixin imgCarousel() {
+    position: absolute;
+    transition: all 2s;
+
+    @include reponsive(xl) {
+        width: 170px;
+    }
+
+    @include reponsive(lg) {
+        width: 220px;
+    }
+
+    @include reponsive(md) {
+        width: 170px;
+    }
+
+    @include reponsive(sm) {
+        width: 80px;
+    }
+
+}
